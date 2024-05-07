@@ -56,8 +56,7 @@ const useImageURLs = () => {
       return response.json();
     })))
     .then(data => {
-      // Actualizar los estados de las URLs de las imágenes
-      setImageURLs(data.map(item => item.url)); //
+      setImageURLs(data.map(item => item.url)); // Updates the status of the URLs of each image
     })
     .catch(error => setError(error))
     .finally(() => setLoading(false));
@@ -85,7 +84,7 @@ function App() {
     <>
       <h1>Images</h1>
       <div>
-        {imageURLs[0] && !showSecondImage && <img src={imageURLs[0]} alt="First image" />}
+        {imageURLs[0] && !showSecondImage && <img src={imageURLs[0]} alt="First image" />} 
         {showSecondImage && imageURLs[1] && <img src={imageURLs[1]} alt="Second image" />}
       </div>
     </>
